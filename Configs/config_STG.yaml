@@ -1,0 +1,8 @@
+timeout : 40
+interval : 0.5
+username : 'sunny.yu2@ef.com.staging'
+password : 'efef@1234'
+#url= http://omni-operation-qa.ef.cn/group/11368
+url : 'https://english1--staging.cs57.my.salesforce.com/'
+username1  : 'odin.automation@EF.com'
+password1 : '@din_Plus_4'
