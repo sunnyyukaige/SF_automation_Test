@@ -40,5 +40,9 @@ def step_impl(context):
     context.oppPage.fill_oppName()
     context.oppPage.fillBU()
     context.oppPage.fillCenter()
-    context.oppPage.search_by_icon('Account Name')
+    context.oppPage.selectStage('Showed Up')
+    context.oppPage.setTargetCloseDate('2018-4-20')
+    context.oppPage.selectAccountName('Yuli DUPLICATE.')
+    context.oppPage.save()
+    context.url=context.oppPage.get_url()
 

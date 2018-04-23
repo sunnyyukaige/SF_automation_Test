@@ -10,6 +10,7 @@ class OppPage(BasePage):
     button_quote = (By.CSS_SELECTOR, "input[value='Quote']")
     iframe_button = (By.CSS_SELECTOR, "iframe[title='OpportunityButton']")
     button_new = (By.NAME, 'new')
+    button_save = (By.NAME, 'save')
 
     # Goto quote page
     def goto_quote(self):
@@ -25,20 +26,27 @@ class OppPage(BasePage):
     # Fill the name of opp
     def fill_oppName(self):
         self.input_by_label('Opportunity Name', 'sunny' + self.generate_random_suffix())
-        time.sleep(60)
 
     # Fill the BU value
     def fillBU(self):
-        self.search_input_by_label('Business Unit', 'Indonesia Franchise')
+        self.search_input_by_label_with_span('Business Unit', 'Indonesia Franchise')
 
     # Fill the center info
     def fillCenter(self):
         self.search_input_by_label('Center', 'Lombok')
 
     # Fill the stage value
-    def selectStage(self):
-        self.select_by_label('Stage', 'Showed Up')
+    def selectStage(self, value):
+        self.select_by_label('Stage', value)
 
     # Set the Target close date
-    def setTargetCloseDate(self):
-        self.search_input_by_label('Target Close Date', '2018-4-20')
+    def setTargetCloseDate(self, time):
+        self.search_input_by_label('Target Close Date', time)
+
+    # Save the opp content
+    def save(self):
+        self.click_element(self.button_save)
+
+    # Select account name
+    def selectAccountName(self, value):
+        self.search_by_icon('Account Name', value)

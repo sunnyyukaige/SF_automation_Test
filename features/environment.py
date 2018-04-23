@@ -10,23 +10,24 @@ from Browser.BrowserManage import BrowserManage
 from PageModel.ContentMapPage import ContenMapPage
 from PageModel.OppPage import OppPage
 from PageModel.QuotePage import QuotePage
+from PageModel.CatalogPage import CatalogPage
 import time
 
 
 def before_scenario(context, scenario):
-    # tag = context.config.userdata['env']
+    tag = context.config.userdata['env']
     # if you want to debug just uncomment below line and comment above line
-    tag = 'qa'
+    # tag = 'staging'
     if tag == 'qa':
         AccountManage()
     else:
         AccountManage('staging')
     context.browserManager = BrowserManage()
     browser_setting = BrowserType.CHROME
-    context.browserManager.add_browser_queue(Browser(browser_type=browser_setting).get_webdriver())
+    context.browserManager.add_browser_queue(Browser(browser_type=browser_setting))
     context.browser = context.browserManager.get_browser()
     context.browser.maximize_window()
-    context.browser.get(AccountManage.url)
+    context.browser.open(AccountManage.url)
     _init_page(context)
 
 
@@ -47,6 +48,7 @@ def _init_page(context):
     context.contentmapPage = ContenMapPage(context.browser)
     context.oppPage = OppPage(context.browser)
     context.quotePage = QuotePage(context.browser)
+    context.catalogPage = CatalogPage(context.browser)
 
 
 def before_tag(context, tag):

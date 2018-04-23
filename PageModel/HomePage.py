@@ -81,7 +81,7 @@ class HomePage(BasePage):
         :return:
         """
         self.click_element((By.CSS_SELECTOR, "a[title='" + value + "']"))
-        while value not in self.browser.title:
+        while value not in self.driver.title:
             self.Hard_Sleep(1)
         # Switch to classical module
 
