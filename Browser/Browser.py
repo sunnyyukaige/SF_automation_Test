@@ -1,7 +1,5 @@
 from selenium import webdriver as SeleniumDriver
 from selenium.common.exceptions import NoAlertPresentException
-
-from utility.find import Find
 from utility.Utils import Utils
 
 __author__ = 'karl.gong&fox&sunny'
@@ -81,7 +79,7 @@ class Browser(object):
         self.__web_driver.get(url)
 
     def get_title(self):
-      return self.__web_driver.title
+        return self.__web_driver.title
 
     def get_pageSource(self):
         return self.__web_driver.page_source
@@ -204,13 +202,13 @@ class Browser(object):
         self.__web_driver._switch_to.context(name)
         return self.__web_driver.current_context
 
-    def scroll_to(self, fromlocation=0, tolocation=0 ):
-        self.__web_driver.execute_script("window.scrollTo({}, {});".format(fromlocation,tolocation))
+    def scroll_to(self, fromlocation=0, tolocation=0):
+        self.__web_driver.execute_script("window.scrollTo({}, {});".format(fromlocation, tolocation))
 
     def scroll_down(self):
-       #SeleniumUtils.scroll_to_direction(self._selenium_context(), "Down")
+        # SeleniumUtils.scroll_to_direction(self._selenium_context(), "Down")
 
-        self.scroll_to(0,self.__web_driver.get_window_size('current'))
+        self.scroll_to(0, self.__web_driver.get_window_size('current'))
 
     def __str__(self):
         return "Browser [WebDriver: %s][SessionId: %s]" % (self.__web_driver.name, self.__web_driver.session_id)

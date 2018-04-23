@@ -6,31 +6,45 @@ class TabBar:
     tabBar = (By.ID, 'tabBar')
     home = (By.LINK_TEXT, 'Home')
     businessUnits = (By.LINK_TEXT, 'Business Units')
-    Investors = (By.LINK_TEXT,'Investors')
-    tabMenu=(By.ID,'tsidButton')
-    tabLabel=(By.ID,'tsidLabel')
-    tabLink=(By.CLASS_NAME,'menuButtonMenuLink')
-    switch_to_lightning=(By.CLASS_NAME,"switch-to-lightning")
-    appLauncher=(By.CLASS_NAME,'slds-icon-waffle_container')
-    tabIcon=(By.CLASS_NAME,'appTileTitleNoDesc')
+    Investors = (By.LINK_TEXT, 'Investors')
+    tabMenu = (By.ID, 'tsidButton')
+    tabLabel = (By.ID, 'tsidLabel')
+    tabLink = (By.CLASS_NAME, 'menuButtonMenuLink')
+    switch_to_lightning = (By.CLASS_NAME, "switch-to-lightning")
+    appLauncher = (By.CLASS_NAME, 'slds-icon-waffle_container')
+    tabIcon = (By.CLASS_NAME, 'appTileTitleNoDesc')
+    profileIcon = (By.CSS_SELECTOR, 'img.profileTrigger.branding-user-profile.circular')
+    swith_to_classical = (By.LINK_TEXT, 'Switch to Salesforce Classic')
+    opp = (By.LINK_TEXT, 'Opportunities')
+
 
 class HomePage(BasePage):
-
-
+    # Check current is the home page
     def checkThisisHomePage(self):
-        assert self.Is_Element_Exist(TabBar.home)
+        assert self.if_element_exist(TabBar.home)
 
+    # Go to bu
     def gotoBU(self):
-        self.Find_Element_And_Click(TabBar.businessUnits)
+        self.click_element(TabBar.businessUnits)
 
+    # Go to Opp
+    def gotoOpp(self):
+        self.click_element(TabBar.opp)
+
+    # Go to Investors
     def gotoInvestors(self):
-        self.Find_Element_And_Click(TabBar.Investors)
+        self.click_element(TabBar.Investors)
 
-    def gotoTab(self,name):
-        label=self.Find_Element_And_Get_Text(TabBar.tabLabel)
-        if(name not in label):
-            self.Find_Element_And_Click(TabBar.tabMenu)
-            elements=self.Find_Elements(TabBar.tabLink)
+    def goto_tab(self, name):
+        """
+        Go to the tab you want by name
+        :param name: the name of tab
+        :return:
+        """
+        label = self.get_text_element(TabBar.tabLabel)
+        if (name not in label):
+            self.click_element(TabBar.tabMenu)
+            elements = self.Find_Elements(TabBar.tabLink)
             for s in elements:
                 if name in s.text:
                     s.click()
@@ -38,23 +52,41 @@ class HomePage(BasePage):
 
         else:
             pass
+        # Switch to lighting module
 
     def switch_to_lightning(self):
-        url=self.getUrl()
-        if('lightning' not in url):
-            self.Find_Element_And_Click(TabBar.switch_to_lightning)
+        url = self.get_url()
+        if ('lightning' not in url):
+            self.click_element(TabBar.switch_to_lightning)
 
-    def gotoModule(self,value):
+    def goto_module(self, value):
+        """
+        Goto module by name of module
+        :param value: the name of module
+        :return:
+        """
         self.Hard_Sleep(5)
-        self.Find_Element_And_Click(TabBar.appLauncher)
+        self.click_element(TabBar.appLauncher)
         self.Hard_Sleep(5)
-        elements=self.Find_Elements(TabBar.tabIcon)
+        elements = self.Find_Elements(TabBar.tabIcon)
         for element in elements:
-            if(value in element.text):
+            if (value in element.text):
                 element.click()
                 break
 
-    def gotoLightTab(self,value):
-        self.Find_Element_And_Click((By.CSS_SELECTOR,"a[title='"+value+"']"))
+    def goto_tab_lighting(self, value):
+        """
+        Search the element by icon name
+        :param value: the name of button
+        :return:
+        """
+        self.click_element((By.CSS_SELECTOR, "a[title='" + value + "']"))
         while value not in self.browser.title:
             self.Hard_Sleep(1)
+        # Switch to classical module
+
+    def switch_to_classical(self):
+        url = self.get_url()
+        if ('lightning' in url):
+            self.click_element(TabBar.profileIcon)
+            self.click_element(TabBar.swith_to_classical)

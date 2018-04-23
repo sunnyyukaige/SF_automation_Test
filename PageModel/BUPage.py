@@ -6,33 +6,38 @@ from selenium.webdriver.common.by import By
 class BUPage(BasePage):
     # PageObject Definition
     button_go = (By.NAME, 'go')
-    link_ChinaFranchise = (By.LINK_TEXT, 'China Franchise')
-    label_pageDescription = (By.CLASS_NAME,'pageDescription')
-    button_edit=(By.NAME,'edit')
+    link_chinaFranchise = (By.LINK_TEXT, 'China Franchise')
+    label_pageDescription = (By.CLASS_NAME, 'pageDescription')
+    button_edit = (By.NAME, 'edit')
 
+    # Search BU button
     def searchBU(self):
-        self.Find_Element_And_Click(self.button_go)
+        self.click_element(self.button_go)
 
+    # Select frist BU
     def selectBU(self):
-        self.Find_Element_And_Click(self.link_ChinaFranchise)
+        self.click_element(self.link_chinaFranchise)
 
-    def checkBUname(self,name):
-        assert self.Find_Element_And_Get_Text(self.label_pageDescription)==name
+    # Check the name of BU
+    def checkBUname(self, name):
+        assert self.get_text_element(self.label_pageDescription) == name
 
+    # Click edit button
     def clickEdit(self):
-        self.Find_Element_And_Click(self.button_edit)
+        self.click_element(self.button_edit)
 
-    def selectMarketName(self,value):
-        self.SelectByLabel('Market Name',value)
+    # Select market name
+    def selectMarketName(self, value):
+        self.select_by_label('Market Name', value)
 
-    def selectBusinessLineName(self,value):
-        self.SelectByLabel('Business Line Name',value)
+    # Select bussiness line name
+    def selectBusinessLineName(self, value):
+        self.select_by_label('Business Line Name', value)
 
-    def setBusinessUnitName(self,value):
-        self.InputByLabel("Business Unit Name",value)
+    # Select business unit name
+    def setBusinessUnitName(self, value):
+        self.input_by_label("Business Unit Name", value)
 
-    def setBusinessUnitCode(self,value):
-        self.InputByLabel("usiness Unit Code",value)
-
-
-
+    # Select business unit code
+    def setBusinessUnitCode(self, value):
+        self.input_by_label("usiness Unit Code", value)

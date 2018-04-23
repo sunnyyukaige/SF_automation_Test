@@ -22,7 +22,6 @@ class WaitUtils(object):
     def wait_for_element_unpresent(driver, locator, interval=interval, timeout=timeout):
         return WebDriverWait(driver, timeout, interval).until_not(EC.presence_of_all_elements_located(locator))
 
-
     @staticmethod
     def wait_for_element_present_element(driver, element, interval=interval, timeout=timeout):
         return WebDriverWait(driver, timeout, interval).until(EC.visibility_of(element))

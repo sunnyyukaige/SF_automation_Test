@@ -1,13 +1,12 @@
 from behave import *
-import time
 
 use_step_matcher("re")
 
 
 @when("I goto learning module")
 def step_impl(context):
-    context.homePage.gotoModule("Omni | Production | Learning")
-    context.homePage.gotoLightTab("Content Maps")
+    context.homePage.goto_module("Omni | Production | Learning")
+    context.homePage.goto_tab_lighting("Content Maps")
 
 @then("I can edit contentmap")
 def step_impl(context):

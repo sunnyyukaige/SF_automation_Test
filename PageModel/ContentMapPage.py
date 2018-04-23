@@ -10,12 +10,15 @@ class ContenMapPage(BasePage):
     label_pageDescription = (By.CLASS_NAME, 'pageDescription')
     button_edit = (By.NAME, 'edit')
 
+    # Add new button
     def addNew(self):
-        self.Find_Element_And_Click(self.button_New)
-        self.ClosethiswindowButtonExist()
+        self.click_element(self.button_New)
+        self.close_this_window_button_exist()
 
+    # Content map name by value
     def inputContentName(self, value):
-        self.InputByLabelLighting('Content Name', value)
+        self.input_by_label_lighting('Content Name', value)
 
-    def selectContentMapVersion(self,value):
-        self.SelectByLabelLighting('Content Map Version',value )
+    # Select content map version by value
+    def selectContentMapVersion(self, value):
+        self.select_by_label_lighting('Content Map Version', value)

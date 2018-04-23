@@ -8,6 +8,8 @@ from Browser.Browser import Browser
 from Browser.Browser import BrowserType
 from Browser.BrowserManage import BrowserManage
 from PageModel.ContentMapPage import ContenMapPage
+from PageModel.OppPage import OppPage
+from PageModel.QuotePage import QuotePage
 import time
 
 
@@ -15,7 +17,7 @@ def before_scenario(context, scenario):
     # tag = context.config.userdata['env']
     # if you want to debug just uncomment below line and comment above line
     tag = 'qa'
-    if (tag == 'qa'):
+    if tag == 'qa':
         AccountManage()
     else:
         AccountManage('staging')
@@ -29,9 +31,9 @@ def before_scenario(context, scenario):
 
 
 def after_scenario(context, scenario):
-    if (scenario.status == "failed"):
+    if scenario.status == "failed":
         logtime = str(time.time()) + ".png"
-        path = "../Result/"
+        path = "./Result/"
         context.browser.get_screenshot_as_file(path + logtime)
     context.browser.quit()
     context.browserManager.clear_browsers()
@@ -42,7 +44,9 @@ def _init_page(context):
     context.homePage = HomePage(context.browser)
     context.loginPage = LoginPage(context.browser)
     context.buPage = BUPage(context.browser)
-    context.contentmapPage=ContenMapPage(context.browser)
+    context.contentmapPage = ContenMapPage(context.browser)
+    context.oppPage = OppPage(context.browser)
+    context.quotePage = QuotePage(context.browser)
 
 
 def before_tag(context, tag):

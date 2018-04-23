@@ -25,7 +25,7 @@ def step_impl(context):
 @then("I can go to home page and {tab} tab")
 def step_impl(context, tab):
     context.homePage.checkThisisHomePage()
-    context.homePage.gotoTab(tab)
+    context.homePage.goto_tab(tab)
 
 
 @step('I can edit the "China Franchise" BU')
