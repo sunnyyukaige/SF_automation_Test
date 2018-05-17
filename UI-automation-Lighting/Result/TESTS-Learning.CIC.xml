@@ -1,0 +1,124 @@
+<testsuite errors="0" failures="7" name="Learning.CIC.Covered in Class includes viewing CIC page" skipped="0" tests="7" time="0.0"><testcase classname="Learning.CIC.Covered in Class includes viewing CIC page" name="Teacher can view course content in CIC page" status="failed" time="0"><failure message="None" type="NoneType">
+<![CDATA[
+Failing step: Given I am a teacher ... undefined in 0.000s
+Location: features/Learning/CIC.feature:6
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Teacher can view course content in CIC page
+    Given I am a teacher ... undefined in 0.000s
+    And There is a group with course map ... undefined in 0.000s
+    When I go to CIC page ... undefined in 0.000s
+    Then I can view the course content in CIC page ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="Learning.CIC.Covered in Class includes viewing CIC page" name="Teacher can add CIC items for CIC page -- @1.1 " status="failed" time="0"><failure message="None" type="NoneType">
+<![CDATA[
+Failing step: Given I am a teacher ... undefined in 0.000s
+Location: features/Learning/CIC.feature:12
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Teacher can add CIC items for CIC page -- @1.1 
+    Given I am a teacher ... undefined in 0.000s
+    And There is a group with course map ... undefined in 0.000s
+    When I go to CIC page ... undefined in 0.000s
+    And I can add All CIC ... undefined in 0.000s
+    Then I can check this CIC All ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="Learning.CIC.Covered in Class includes viewing CIC page" name="Teacher can add CIC items for CIC page -- @1.2 " status="failed" time="0"><failure message="None" type="NoneType">
+<![CDATA[
+Failing step: Given I am a teacher ... undefined in 0.000s
+Location: features/Learning/CIC.feature:12
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Teacher can add CIC items for CIC page -- @1.2 
+    Given I am a teacher ... undefined in 0.000s
+    And There is a group with course map ... undefined in 0.000s
+    When I go to CIC page ... undefined in 0.000s
+    And I can add Add More CIC ... undefined in 0.000s
+    Then I can check this CIC Add More ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="Learning.CIC.Covered in Class includes viewing CIC page" name="Teacher can add CIC items for CIC page -- @1.3 " status="failed" time="0"><failure message="None" type="NoneType">
+<![CDATA[
+Failing step: Given I am a teacher ... undefined in 0.000s
+Location: features/Learning/CIC.feature:12
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Teacher can add CIC items for CIC page -- @1.3 
+    Given I am a teacher ... undefined in 0.000s
+    And There is a group with course map ... undefined in 0.000s
+    When I go to CIC page ... undefined in 0.000s
+    And I can add Default CIC ... undefined in 0.000s
+    Then I can check this CIC Default ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="Learning.CIC.Covered in Class includes viewing CIC page" name="Teacher can not publish without CIC items checked for CIC page -- @1.1 " status="failed" time="0"><failure message="None" type="NoneType">
+<![CDATA[
+Failing step: Given I am a teacher ... undefined in 0.000s
+Location: features/Learning/CIC.feature:25
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Teacher can not publish without CIC items checked for CIC page -- @1.1 
+    Given I am a teacher ... undefined in 0.000s
+    And There is a group with course map ... undefined in 0.000s
+    When I go to CIC page ... undefined in 0.000s
+    And publish the CIC ... undefined in 0.000s
+    Then I will get error alert abc ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="Learning.CIC.Covered in Class includes viewing CIC page" name="Teacher can export CIC page with localization -- @1.1 " status="failed" time="0"><failure message="None" type="NoneType">
+<![CDATA[
+Failing step: Given I am a teacher ... undefined in 0.000s
+Location: features/Learning/CIC.feature:35
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Teacher can export CIC page with localization -- @1.1 
+    Given I am a teacher ... undefined in 0.000s
+    When I go to CIC page ... undefined in 0.000s
+    And I publish CIC ... undefined in 0.000s
+    Then I can export the CIC with CN ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="Learning.CIC.Covered in Class includes viewing CIC page" name="Teacher can export CIC page with localization -- @1.2 " status="failed" time="0"><failure message="None" type="NoneType">
+<![CDATA[
+Failing step: Given I am a teacher ... undefined in 0.000s
+Location: features/Learning/CIC.feature:35
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Teacher can export CIC page with localization -- @1.2 
+    Given I am a teacher ... undefined in 0.000s
+    When I go to CIC page ... undefined in 0.000s
+    And I publish CIC ... undefined in 0.000s
+    Then I can export the CIC with EN ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

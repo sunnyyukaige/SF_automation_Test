@@ -1,0 +1,71 @@
+<testsuite errors="1" failures="0" name="Learning.Learning.Admin can login SF system" skipped="0" tests="1" time="57.604371"><testcase classname="Learning.Learning.Admin can login SF system" name="Admin can goto BU" status="failed" time="57.604371"><error message="Message: Cannot find element by [switch-to-lightning] &#10;Screenshot: available via..." type="NoSuchElementException">
+<![CDATA[
+Failing step: Then I can switch-to-lightning module ... failed in 42.882s
+Location: features/Learning/Learning.feature:6
+Traceback (most recent call last):
+  File "/Users/sunny/git/salesforce-automation/UI-automation-Lighting/utility/find.py", line 16, in find_web_element
+    WaitUtils.wait_for_element_present(self.driver, (by, value), self.interval, self.timeout)
+  File "/Users/sunny/git/salesforce-automation/UI-automation-Lighting/utility/wait_utils.py", line 11, in wait_for_element_present
+    return WebDriverWait(driver, timeout, interval).until(EC.presence_of_all_elements_located(locator))
+  File "/Users/sunny/.pyenv/versions/anaconda3-5.0.0/envs/sunnyenv/lib/python3.6/site-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sunny/git/salesforce-automation/UI-automation-Lighting/WebElement/Element.py", line 12, in find_element_and_click
+    Find(driver).find_web_element(locator[0], locator[1]).click()
+  File "/Users/sunny/git/salesforce-automation/UI-automation-Lighting/utility/find.py", line 19, in find_web_element
+    raise NoSuchElementException("Cannot find element by [%s] " % value, e)
+selenium.common.exceptions.NoSuchElementException: Message: Cannot find element by [switch-to-lightning] 
+Screenshot: available via screen
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sunny/git/salesforce-automation/UI-automation-Lighting/utility/find.py", line 16, in find_web_element
+    WaitUtils.wait_for_element_present(self.driver, (by, value), self.interval, self.timeout)
+  File "/Users/sunny/git/salesforce-automation/UI-automation-Lighting/utility/wait_utils.py", line 11, in wait_for_element_present
+    return WebDriverWait(driver, timeout, interval).until(EC.presence_of_all_elements_located(locator))
+  File "/Users/sunny/.pyenv/versions/anaconda3-5.0.0/envs/sunnyenv/lib/python3.6/site-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sunny/.pyenv/versions/anaconda3-5.0.0/envs/sunnyenv/lib/python3.6/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/Users/sunny/.pyenv/versions/anaconda3-5.0.0/envs/sunnyenv/lib/python3.6/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/base.py", line 28, in step_impl
+    context.homePage.switch_to_lightning()
+  File "/Users/sunny/git/salesforce-automation/UI-automation-Lighting/PageModel/HomePage.py", line 60, in switch_to_lightning
+    self.click_element(TabBar.switch_to_lightning)
+  File "/Users/sunny/git/salesforce-automation/UI-automation-Lighting/PageModel/BasePage.py", line 103, in click_element
+    self.find_element_and_click(self.driver, locator=locator)
+  File "/Users/sunny/git/salesforce-automation/UI-automation-Lighting/WebElement/Element.py", line 15, in find_element_and_click
+    Find(driver).find_web_element(locator[0], locator[1]).click()
+  File "/Users/sunny/git/salesforce-automation/UI-automation-Lighting/utility/find.py", line 19, in find_web_element
+    raise NoSuchElementException("Cannot find element by [%s] " % value, e)
+selenium.common.exceptions.NoSuchElementException: Message: Cannot find element by [switch-to-lightning] 
+Screenshot: available via screen
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Admin can goto BU
+    Given I am a admin ... passed in 14.723s
+    Then I can switch-to-lightning module ... failed in 42.882s
+    When I goto learning module ... skipped in 0.000s
+    Then I can edit contentmap ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

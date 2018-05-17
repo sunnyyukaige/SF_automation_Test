@@ -14,8 +14,8 @@ If you use macOS, you can do this via [Homebrew](https://brew.sh/) running `brew
 
 ### Run the tests
 
-1. Go to the directory `./salesforce-automation/UI-automation-classical`.
-2. Run exp:`behave -D env_tag='qa' browser_tag='chrome' `.
+1. Go to the directory `UI automation/OMNI_UI_automation`.
+2. Run `behave -D env=qa`.
 
 ## Performance testing
 

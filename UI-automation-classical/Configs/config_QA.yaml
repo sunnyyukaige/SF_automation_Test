@@ -1,0 +1,8 @@
+timeout : 40
+interval : 0.5
+username : 'sunny.yu2@ef.com.dev'
+password : 'kaige8531917'
+#url= http://omni-operation-qa.ef.cn/group/11368
+url : 'https://test.salesforce.com/'
+username1  : 'odin.automation@EF.com'
+password1 : '@din_Plus_4'

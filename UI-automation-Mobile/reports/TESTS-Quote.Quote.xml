@@ -1,0 +1,16 @@
+<testsuite errors="0" failures="0" name="Quote.Quote.Admin can login SF system" skipped="0" tests="1" time="215.554746"><testcase classname="Quote.Quote.Admin can login SF system" name="Admin can quote sale -- @1.1 " status="passed" time="215.554746"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Admin can quote sale -- @1.1 
+    Given I am a admin ... passed in 6.444s
+    When I go to classical model ... passed in 0.010s
+    Then I can go to home page and Sales tab ... passed in 6.094s
+    When I create opp ... passed in 37.353s
+    And I goto opp and quote ... passed in 78.179s
+    And I can finish a quote ... passed in 77.558s
+    And Check and delete quote ... passed in 9.918s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
